@@ -1,0 +1,52 @@
+img {
+    width: 100px;
+}
+
+.cards-shuffle {
+    position: relative;
+    margin: 200px auto;
+    width: 420px;
+}
+
+.cards-shuffle img:nth-child(1) {
+    position: absolute;
+    animation: shuffle 3s 1s linear forwards;
+}
+
+.cards-shuffle img:nth-child(2) {
+    position: absolute;
+    border: 1px solid red;
+    animation: shuffle 2.5s 1.5s  linear forwards;
+}
+
+.cards-shuffle img:nth-child(3) {
+    position: absolute;
+    border: 1px solid green;
+    animation: shuffle 2s 2s linear forwards;
+}
+
+.cards-shuffle img:nth-child(4) {
+    position: absolute;
+    border: 1px solid blue;
+    animation: shuffle 1.5s 2.5s linear forwards;
+}
+
+@keyframes shuffle{
+    from {
+        left: 0;
+    }
+    to {
+        left: 0;
+    }
+    0%{ transform: translateY(25px) rotate(45deg) }
+    10%{ transform: translateX(30px) rotate(90deg)  }
+    20%{ transform: translateY(35px) rotate(135deg)  }
+    30%{ transform: translateX(40px) rotate(180deg)  }
+    40%{ transform: translateY(45px) rotate(135deg)  }
+    50%{ transform: translateX(50px) rotate(90deg)  }
+    60%{ transform: translateY(55px) rotate(45deg)  }
+    70%{ transform: translateX(60px) rotate(90deg)  }
+    80%{ transform: translateY(65px) rotate(135deg)  }
+    90%{ transform: translateX(70px) rotate(180deg)  }
+    100%{ transform: translateY(75px) rotate(180deg)  }
+}
