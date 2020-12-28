@@ -1,35 +1,97 @@
 img {
     width: 100px;
+    /* margin: 1px; */
 }
 
-.cards-shuffle {
-    position: relative;
-    margin: 200px auto;
-    width: 420px;
+.table-wrapper {
+    max-width: 80%;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, minmax(150px, auto));
+    grid-auto-rows: 150px;
 }
 
-.cards-shuffle img:nth-child(1) {
+.table-top {
+    background-color: grey;
+    grid-area: 1/1/1/6;
+}
+
+.table-center {
+    background-color: rgb(223, 238, 13);
+    grid-area: 2/1/5/6;
+    display: grid;
+}
+
+.table-bottom {
+    background-color: rgb(20, 197, 241);
+    grid-area: 5/1/5/6;   
+}
+
+
+/* .cards-shuffle img {
+    margin: 3px;
+    border: 1px solid red;
+} */
+
+/* .player-one {
+    text-align: center;
+    margin: 50px auto 20px;
+}
+
+.player-two {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+} */
+
+/* .player-two img {
+    transform: rotate(90deg);
+} */
+
+/* .cards-shuffle img:nth-child() {
     position: absolute;
     animation: shuffleone 3s 1s linear forwards;
 }
 
 .cards-shuffle img:nth-child(2) {
     position: absolute;
-    /* border: 1px solid red; */
     animation: shuffletwo 2.5s 1.5s  linear forwards;
 }
 
 .cards-shuffle img:nth-child(3) {
     position: absolute;
-    /* border: 1px solid green; */
     animation: shufflethree 2s 2s linear forwards;
 }
 
 .cards-shuffle img:nth-child(4) {
     position: absolute;
-    /* border: 1px solid blue; */
     animation: shufflefour 1.5s 2.5s linear forwards;
+} */
+
+/* .cards-shuffle img:nth-child(n){
+    position: absolute;
+    animation: shufflefour 3s 1s linear forwards;
+    border: 1px solid yellow;
 }
+
+.cards-shuffle img:nth-child(2n){
+    position: absolute;
+    animation: shuffleone 3s 1s linear forwards;
+    border: 1px solid red;
+}
+
+.cards-shuffle img:nth-child(3n){
+    position: absolute;
+    animation: shuffletwo 2.5s 1.5s  linear forwards;
+    border: 1px solid green;
+}
+
+.cards-shuffle img:nth-child(4n){
+    position: absolute;
+    animation: shufflethree 2s 2s linear forwards;
+    border: 1px solid blue;
+} */
 
 @keyframes shuffleone{
     from {
