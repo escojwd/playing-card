@@ -1,7 +1,3 @@
-img {
-    width: 100px;
-    /* margin: 1px; */
-}
 
 .table-wrapper {
     max-width: 80%;
@@ -9,7 +5,6 @@ img {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, minmax(150px, auto));
-    grid-auto-rows: 150px;
 }
 
 .table-top {
@@ -21,6 +16,7 @@ img {
     background-color: rgb(223, 238, 13);
     grid-area: 2/1/5/6;
     display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
 }
 
 .table-bottom {
@@ -29,146 +25,73 @@ img {
 }
 
 
-/* .cards-shuffle img {
-    margin: 3px;
-    border: 1px solid red;
-} */
-
-/* .player-one {
-    text-align: center;
-    margin: 50px auto 20px;
+.hand {
+    position: relative;
+    left: 50%;
+    top: 25%;
+    transform: translate(-10%, 0);
 }
 
-.player-two {
-    display: flex;
-    flex-direction: column;
-    margin-left: 50px;
-} */
-
-/* .player-two img {
-    transform: rotate(90deg);
-} */
-
-/* .cards-shuffle img:nth-child() {
+.card {
+    height: 250px;
+    width: 180px;
+    border-radius: 5px;
+    background-image: url(./assets/back.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
     position: absolute;
-    animation: shuffleone 3s 1s linear forwards;
+    top: 0;
+    transition: transform 0.2s ease;
+    transition-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }
 
-.cards-shuffle img:nth-child(2) {
-    position: absolute;
-    animation: shuffletwo 2.5s 1.5s  linear forwards;
+  
+.card-1 {
+    z-index:3;
+    margin-left: 20px;
+    animation-duration: 2s;
+    animation-name: card-1;
+    animation-iteration-count: 10;
 }
 
-.cards-shuffle img:nth-child(3) {
-    position: absolute;
-    animation: shufflethree 2s 2s linear forwards;
+.card-2 {
+    z-index:2;
+    margin-left:10px;
+    animation-duration: 2s;
+    animation-name: card-2;
+    animation-iteration-count: 10;
 }
 
-.cards-shuffle img:nth-child(4) {
-    position: absolute;
-    animation: shufflefour 1.5s 2.5s linear forwards;
-} */
-
-/* .cards-shuffle img:nth-child(n){
-    position: absolute;
-    animation: shufflefour 3s 1s linear forwards;
-    border: 1px solid yellow;
+.card-3 {
+    z-index: 1;
+    animation-duration: 2s;
+    animation-name: card-3;
+    animation-iteration-count: 10;
 }
 
-.cards-shuffle img:nth-child(2n){
-    position: absolute;
-    animation: shuffleone 3s 1s linear forwards;
-    border: 1px solid red;
+@keyframes card-1 {
+    0% {}
+    16.66666% {transform: translateX(95px) rotate(15deg)} 
+    33.33333%  {transform: translateX(-20px); z-index:1}
+    49.99999% {transform: translateX(-20px); z-index:1}
+    66.66666% {transform: translateX(-10px); z-index:2}
+    83.33333% {transform: translateX(-10px); z-index:2}
 }
 
-.cards-shuffle img:nth-child(3n){
-    position: absolute;
-    animation: shuffletwo 2.5s 1.5s  linear forwards;
-    border: 1px solid green;
+@keyframes card-2 {
+    0% {}
+    16.66666% {transform: translateX(0)}
+    33.33333%  {transform: translateX(10px); z-index:3}
+    49.99999% {transform: translateX(105px) rotate(15deg)}
+    66.66666% {transform: translateX(-10px); z-index:1}
+    83.33333% {transform: translateX(-10px); z-index:1}
 }
 
-.cards-shuffle img:nth-child(4n){
-    position: absolute;
-    animation: shufflethree 2s 2s linear forwards;
-    border: 1px solid blue;
-} */
-
-@keyframes shuffleone{
-    from {
-        left: 0;
-    }
-    to {
-        left: 0;
-    }
-    0%{ transform: translateY(25px) rotate(45deg) }
-    10%{ transform: translateX(30px) rotate(90deg)  }
-    20%{ transform: translateY(35px) rotate(135deg)  }
-    30%{ transform: translateX(40px) rotate(180deg)  }
-    40%{ transform: translateY(45px) rotate(135deg)  }
-    50%{ transform: translateX(50px) rotate(90deg)  }
-    60%{ transform: translateY(55px) rotate(45deg)  }
-    70%{ transform: translateX(60px) rotate(90deg)  }
-    80%{ transform: translateY(65px) rotate(135deg)  }
-    90%{ transform: translateX(70px) rotate(180deg)  }
-    100%{ transform: translateY(0px) rotate(180deg)  }
-}
-
-@keyframes shuffletwo{
-    from {
-        left: 0;
-    }
-    to {
-        left: 0;
-    }
-    0%{ transform: translateY(-25px) rotate(45deg) }
-    10%{ transform: translateX(-30px) rotate(90deg)  }
-    20%{ transform: translateY(-35px) rotate(135deg)  }
-    30%{ transform: translateX(-40px) rotate(180deg)  }
-    40%{ transform: translateY(-45px) rotate(135deg)  }
-    50%{ transform: translateX(-50px) rotate(90deg)  }
-    60%{ transform: translateY(-55px) rotate(45deg)  }
-    70%{ transform: translateX(-60px) rotate(90deg)  }
-    80%{ transform: translateY(-65px) rotate(135deg)  }
-    90%{ transform: translateX(-70px) rotate(180deg)  }
-    100%{ transform: translateY(0px) rotate(180deg)  }
-}
-
-@keyframes shufflethree{
-    from {
-        left: 0;
-    }
-    to {
-        left: 0;
-    }
-    0%{ transform: translateX(25px) rotate(45deg) }
-    10%{ transform: translateY(30px) rotate(90deg)  }
-    20%{ transform: translateX(35px) rotate(135deg)  }
-    30%{ transform: translateY(40px) rotate(180deg)  }
-    40%{ transform: translateX(45px) rotate(135deg)  }
-    50%{ transform: translateY(50px) rotate(90deg)  }
-    60%{ transform: translateX(55px) rotate(45deg)  }
-    70%{ transform: translateY(60px) rotate(90deg)  }
-    80%{ transform: translateX(65px) rotate(135deg)  }
-    90%{ transform: translateY(100px) rotate(180deg)  }
-    100%{ transform: translateY(0px) rotate(180deg)  }
-}
-
-@keyframes shufflefour{
-    from {
-        left: 0;
-    }
-    to {
-        left: 0;
-    }
-    0%{ transform: translateY(19px) rotate(45deg) }
-    10%{ transform: translateX(56px) rotate(90deg)  }
-    20%{ transform: translateY(69px) rotate(135deg)  }
-    30%{ transform: translateX(13px) rotate(180deg)  }
-    40%{ transform: translateY(2px) rotate(135deg)  }
-    50%{ transform: translateX(97px) rotate(90deg)  }
-    60%{ transform: translateY(35px) rotate(45deg)  }
-    70%{ transform: translateX(77px) rotate(90deg)  }
-    80%{ transform: translateY(54px) rotate(135deg)  }
-    90%{ transform: translateX(65px) rotate(180deg)  }
-    100%{ transform: translateY(0px) rotate(180deg)  }
+@keyframes card-3 {
+    0% {z-index: 1}
+    16.66666% {transform: translateX(0)}
+    33.33333%  {transform: translateX(10px); z-index:2}
+    49.99999% {transform: translateX(10px); z-index:2}
+    66.66666% {transform: translateX(20px); z-index:3}
+    83.33333% {transform: translateX(115px) rotate(15deg);}
 }
